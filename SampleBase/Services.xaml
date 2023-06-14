@@ -1,0 +1,34 @@
+﻿<Page x:Class="SampleBase.Services"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SampleBase"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Services" IsEnabledChanged="Page_IsEnabledChanged" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <DataGrid Name="DGridServices" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="" Binding="{Binding Title}" Width="200"></DataGridTextColumn>
+                <DataGridTextColumn Header="" Binding="{Binding Cost}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="" Binding="{Binding DurationInSeconds}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="" Binding="{Binding Description}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="" Binding="{Binding Disount}" Width="100"></DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Редактировать" Name="BtnEdit" Click="BtnEdit_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Добавить" Grid.Row="1" HorizontalAlignment="Left" Name="BtnAdd" Click="BtnAdd_Click" Foreground="Black" Background="White"></Button>
+        <Button Content="Удалить" Grid.Row="1" HorizontalAlignment="Right" Name="BtnDelete" Click="BtnDelete_Click" Background="White"></Button>
+    </Grid>
+</Page>
